@@ -5,7 +5,9 @@ import logger from './logger'
 
 dotenv.config()
 
-const envSchema = joi.object().keys({
+const envSchema = joi
+  .object()
+  .keys({
     NODE_ENV: joi.string().valid('development', 'production').required(),
     PORT: joi.number().positive().required(),
     ORIGIN: joi.string().uri().required(),
